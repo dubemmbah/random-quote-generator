@@ -2,6 +2,9 @@
 
 :root {
   --color-primary: #20c997;
+  --primary-light-cyan: hsl(193, 38%, 86%);
+  --primary-neon-green: hsl(150, 100%, 66%);
+  --neutral-dark-grayish-blue: hsl(217, 19%, 24%);
 }
 
 *,
@@ -30,22 +33,22 @@ body {
 
 .container {
   background: #27272ae5;
-  max-width: 38rem;
+  max-width: 50rem;
   width: 100%;
   padding: 4rem;
   text-align: center;
   border-radius: 1rem;
   position: relative;
-  /* overflow: hidden; */
 }
 
 .container::before {
   content: "\0201C";
   position: absolute;
-  top: -5%;
+  top: -17.5%;
   left: 2.5%;
   font-size: 15rem;
   color: var(--color-primary);
+  z-index: 100;
 }
 
 .heading {
@@ -61,6 +64,43 @@ body {
   font-weight: 500;
   margin-bottom: 2rem;
   line-height: 1.25;
+}
+
+.spinner-wrapper {
+  background: linear-gradient(
+    40deg,
+    var(--primary-neon-green),
+    var(--primary-light-cyan)
+  );
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: rotate 1s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  margin: 50px auto;
+}
+
+.spinner {
+  background-color: var(--neutral-dark-grayish-blue);
+  border-radius: 50px;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .divider {
